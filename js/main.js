@@ -108,6 +108,7 @@ btnReset.onclick = function () {
   filterBtn.style.display = "block";
   searchInput.style.display = "none";
   searchInput.value = "";
+  formSelect.value = "Open this select menu"
 };
 filterBtn.onclick = function () {
   this.style.display = "none";
