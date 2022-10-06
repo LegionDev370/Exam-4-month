@@ -62,18 +62,20 @@ fetchSend();
 
 function renderingElementsPage(array) {
   elbody.innerHTML = "";
-  array.forEach((element) => {
+  array.forEach((element,index) => {
     let templateClone = template.cloneNode(true);
-    let currencyId = findElement("#currency-id", templateClone);
+    let currencyCode = findElement("#currency-id", templateClone);
     let currencyName = findElement(".currency-name", templateClone);
     let currencyWord = findElement(".currency-word", templateClone);
     let currencyUpdating = findElement(".currency-updating", templateClone);
     let currencyPrice = findElement(".currency-price", templateClone);
-    currencyId.innerHTML = element.id;
+    let currencyNomer = findElement(".currency-nomer",templateClone);
+    currencyCode.innerHTML = element.Code;
     currencyName.innerHTML = element.CcyNm_UZ;
     currencyWord.innerHTML = element.Ccy;
     currencyUpdating.innerHTML = element.Date;
     currencyPrice.innerHTML = element.Rate;
+    currencyNomer.innerHTML = ++index;
     elbody.appendChild(templateClone);
   });
 }
